@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>自己紹介 - pyama2000.github.io</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="pyama2000のポートフォリオ by mdBook">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 自己紹介</a></li><li class="expanded "><a href="production/tof.html"><strong aria-hidden="true">2.</strong> 制作物</a></li><li><ol class="section"><li class="expanded "><a href="production/mdbook2pages.html"><strong aria-hidden="true">2.1.</strong> mdbook2pages</a></li><li class="expanded "><a href="production/moses.html"><strong aria-hidden="true">2.2.</strong> moses</a></li><li class="expanded "><a href="production/musa.html"><strong aria-hidden="true">2.3.</strong> musa</a></li><li class="expanded "><a href="production/spotify_api.html"><strong aria-hidden="true">2.4.</strong> spotify_api</a></li><li class="expanded "><a href="production/tex2pdf.html"><strong aria-hidden="true">2.5.</strong> TeX2PDF</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">pyama2000.github.io</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#自己紹介" id="自己紹介">自己紹介</a></h1>
+<h2><a class="header" href="#1-経歴" id="1-経歴">1. 経歴</a></h2>
+<h3><a class="header" href="#11-学歴" id="11-学歴">1.1 学歴</a></h3>
+<table><thead><tr><th align="center">年</th><th align="center">月</th><th align="left">学歴・職歴</th></tr></thead><tbody>
+<tr><td align="center">平成24年</td><td align="center">3月</td><td align="left">川崎市立宮前平中学校 卒業</td></tr>
+<tr><td align="center">平成24年</td><td align="center">4月</td><td align="left">私立 桐蔭学園高等学校 入学</td></tr>
+<tr><td align="center">平成27年</td><td align="center">3月</td><td align="left">私立 桐蔭学園高等学校 卒業</td></tr>
+<tr><td align="center">平成27年</td><td align="center">4月</td><td align="left">東京電機大学未来科学部情報メディア学科 入学</td></tr>
+<tr><td align="center">平成31年</td><td align="center">3月</td><td align="left">東京電機大学未来科学部情報メディア学科 卒業</td></tr>
+<tr><td align="center">平成31年</td><td align="center">4月</td><td align="left">東京電機大学大学院未来科学研究科情報メディア学専攻 修士課程 入学</td></tr>
+<tr><td align="center">令和3年</td><td align="center">3月</td><td align="left">東京電機大学大学院未来科学研究科情報メディア学専攻 修士課程 修了見込み</td></tr>
+</tbody></table>
+<h3><a class="header" href="#12-アルバイト歴" id="12-アルバイト歴">1.2 アルバイト歴</a></h3>
+<table><thead><tr><th align="center">年</th><th align="center">月</th><th align="left">学歴・職歴</th></tr></thead><tbody>
+<tr><td align="center">令和元年</td><td align="center">5月</td><td align="left">株式会社アライドテレシス株式会社</td></tr>
+</tbody></table>
+<h2><a class="header" href="#2-開発経験" id="2-開発経験">2. 開発経験</a></h2>
+<h3><a class="header" href="#スキル" id="スキル">スキル</a></h3>
+<p>Rust / Python / Nuxt.js / AWS / Neovim / Security / 自動化</p>
+<h3><a class="header" href="#21-a-hrefproductionmdbook2pageshtmlmdbook2pagesa" id="21-a-hrefproductionmdbook2pageshtmlmdbook2pagesa">2.1 <a href="./production/mdbook2pages.html">mdbook2pages</a></a></h3>
+<blockquote>
+<p><a href="https://github.com/rust-lang/mdBook">rust-lang/mdBook</a>で作成したものをプッシュするとGitHub Pagesにデプロイ<br />
+<a href="https://github.com/pyama2000/mdbook2pages">pyama2000/mdbook2pages</a></p>
+</blockquote>
+<p>Markdownから<em><strong>book</strong></em>を作成するRust製のツールであるmdBookで作成したものを
+GitHub ActionsによってGitHub Pagesにデプロイするリポジトリです。</p>
+<h3><a class="header" href="#22-a-hrefproductionmoseshtmlmosesa" id="22-a-hrefproductionmoseshtmlmosesa">2.2 <a href="./production/moses.html">moses</a></a></h3>
+<blockquote>
+<p>AWS CloudFormationのCI/CDを効率的に行うツール<br />
+<a href="https://github.com/pyama2000/mdbook2pages">pyama2000/mdbook2pages</a></p>
+</blockquote>
+<p>AWS CloudFormationのCI/CDを効率的に行うツールです。</p>
+<h3><a class="header" href="#23-a-hrefproductionmusahtmlmusaa" id="23-a-hrefproductionmusahtmlmusaa">2.3 <a href="./production/musa.html">musa</a></a></h3>
+<blockquote>
+<p>Spotifyのプレイリストを操作するWebアプリケーション<br />
+<a href="https://github.com/pyama2000/musa">pyama2000/musa</a></p>
+</blockquote>
+<p>Spotifyのプレイリストのスナップショット作成や、プレイリスト同士を統合するマージ機能、
+検索機能の強化などを目的としたWebアプリケーションです。</p>
+<h3><a class="header" href="#24-a-hrefproductionspotif_apihtmlspotify_apia" id="24-a-hrefproductionspotif_apihtmlspotify_apia">2.4 <a href="./production/spotif_api.html">spotify_api</a></a></h3>
+<blockquote>
+<p>Spotify Web APIライブラリ<br />
+[pyama2000/spotify_api][spotify_api]</p>
+</blockquote>
+<p>Rustで<a href="https://developer.spotify.com/documentation/web-api">Spotify Web API</a>を利用できる
+ライブラリを作成しました。非同期でリクエストを送ることもできます。</p>
+<h3><a class="header" href="#25-a-hrefproductiontex2pdfhtmltex2pdfa" id="25-a-hrefproductiontex2pdfhtmltex2pdfa">2.5 <a href="./production/tex2pdf.html">TeX2PDF</a></a></h3>
+<blockquote>
+<p>GitHubにTeXファイルをプッシュするとリリースページにデプロイ<br />
+<a href="https://github.com/pyama2000/tex2pdf">pyama2000/tex2pdf</a></p>
+</blockquote>
+<p>TeXファイルをGitHubにプッシュすると、GitHub Actionsによって継続的にリリースページに
+デプロイするリポジトリです。</p>
+<h2><a class="header" href="#3-各種アカウント" id="3-各種アカウント">3. 各種アカウント</a></h2>
+<table><thead><tr><th align="left">サービス</th><th align="left">アカウント名・URL</th></tr></thead><tbody>
+<tr><td align="left">GitHub</td><td align="left"><a href="https://github.com/pyama2000">https://github.com/pyama2000</a></td></tr>
+<tr><td align="left">Qiita</td><td align="left"><a href="https://qiita.com/pyama2000">https://qiita.com/pyama2000</a></td></tr>
+<tr><td align="left">Twitter</td><td align="left"><a href="https://twitter.com/pyama2000">@pyama2000</a></td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+                            <a rel="next" href="production/tof.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+                    <a href="production/tof.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://0.0.0.0:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

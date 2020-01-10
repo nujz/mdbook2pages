@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>pyama2000.github.io</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="pyama2000のポートフォリオ by mdBook">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/custom.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 自己紹介</a></li><li class="expanded "><a href="production/tof.html"><strong aria-hidden="true">2.</strong> 制作物</a></li><li><ol class="section"><li class="expanded "><a href="production/mdbook2pages.html"><strong aria-hidden="true">2.1.</strong> mdbook2pages</a></li><li class="expanded "><a href="production/moses.html"><strong aria-hidden="true">2.2.</strong> moses</a></li><li class="expanded "><a href="production/musa.html"><strong aria-hidden="true">2.3.</strong> musa</a></li><li class="expanded "><a href="production/spotify_api.html"><strong aria-hidden="true">2.4.</strong> spotify_api</a></li><li class="expanded "><a href="production/tex2pdf.html"><strong aria-hidden="true">2.5.</strong> TeX2PDF</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">pyama2000.github.io</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#自己紹介" id="自己紹介">自己紹介</a></h1>
+<h2><a class="header" href="#1-経歴" id="1-経歴">1. 経歴</a></h2>
+<h3><a class="header" href="#11-学歴" id="11-学歴">1.1 学歴</a></h3>
+<table><thead><tr><th align="center">年</th><th align="center">月</th><th align="left">学歴・職歴</th></tr></thead><tbody>
+<tr><td align="center">平成24年</td><td align="center">3月</td><td align="left">川崎市立宮前平中学校 卒業</td></tr>
+<tr><td align="center">平成24年</td><td align="center">4月</td><td align="left">私立 桐蔭学園高等学校 入学</td></tr>
+<tr><td align="center">平成27年</td><td align="center">3月</td><td align="left">私立 桐蔭学園高等学校 卒業</td></tr>
+<tr><td align="center">平成27年</td><td align="center">4月</td><td align="left">東京電機大学未来科学部情報メディア学科 入学</td></tr>
+<tr><td align="center">平成31年</td><td align="center">3月</td><td align="left">東京電機大学未来科学部情報メディア学科 卒業</td></tr>
+<tr><td align="center">平成31年</td><td align="center">4月</td><td align="left">東京電機大学大学院未来科学研究科情報メディア学専攻 修士課程 入学</td></tr>
+<tr><td align="center">令和3年</td><td align="center">3月</td><td align="left">東京電機大学大学院未来科学研究科情報メディア学専攻 修士課程 修了見込み</td></tr>
+</tbody></table>
+<h3><a class="header" href="#12-アルバイト歴" id="12-アルバイト歴">1.2 アルバイト歴</a></h3>
+<table><thead><tr><th align="center">年</th><th align="center">月</th><th align="left">学歴・職歴</th></tr></thead><tbody>
+<tr><td align="center">令和元年</td><td align="center">5月</td><td align="left">株式会社アライドテレシス株式会社</td></tr>
+</tbody></table>
+<h2><a class="header" href="#2-開発経験" id="2-開発経験">2. 開発経験</a></h2>
+<h3><a class="header" href="#スキル" id="スキル">スキル</a></h3>
+<p>Rust / Python / Nuxt.js / AWS / Neovim / Security / 自動化</p>
+<h3><a class="header" href="#21-a-hrefproductionmdbook2pageshtmlmdbook2pagesa" id="21-a-hrefproductionmdbook2pageshtmlmdbook2pagesa">2.1 <a href="./production/mdbook2pages.html">mdbook2pages</a></a></h3>
+<blockquote>
+<p><a href="https://github.com/rust-lang/mdBook">rust-lang/mdBook</a>で作成したものをプッシュするとGitHub Pagesにデプロイ<br />
+<a href="https://github.com/pyama2000/mdbook2pages">pyama2000/mdbook2pages</a></p>
+</blockquote>
+<p>Markdownから<em><strong>book</strong></em>を作成するRust製のツールであるmdBookで作成したものを
+GitHub ActionsによってGitHub Pagesにデプロイするリポジトリです。</p>
+<h3><a class="header" href="#22-a-hrefproductionmoseshtmlmosesa" id="22-a-hrefproductionmoseshtmlmosesa">2.2 <a href="./production/moses.html">moses</a></a></h3>
+<blockquote>
+<p>AWS CloudFormationのCI/CDを効率的に行うツール<br />
+<a href="https://github.com/pyama2000/mdbook2pages">pyama2000/mdbook2pages</a></p>
+</blockquote>
+<p>AWS CloudFormationのCI/CDを効率的に行うツールです。</p>
+<h3><a class="header" href="#23-a-hrefproductionmusahtmlmusaa" id="23-a-hrefproductionmusahtmlmusaa">2.3 <a href="./production/musa.html">musa</a></a></h3>
+<blockquote>
+<p>Spotifyのプレイリストを操作するWebアプリケーション<br />
+<a href="https://github.com/pyama2000/musa">pyama2000/musa</a></p>
+</blockquote>
+<p>Spotifyのプレイリストのスナップショット作成や、プレイリスト同士を統合するマージ機能、
+検索機能の強化などを目的としたWebアプリケーションです。</p>
+<h3><a class="header" href="#24-a-hrefproductionspotif_apihtmlspotify_apia" id="24-a-hrefproductionspotif_apihtmlspotify_apia">2.4 <a href="./production/spotif_api.html">spotify_api</a></a></h3>
+<blockquote>
+<p>Spotify Web APIライブラリ<br />
+[pyama2000/spotify_api][spotify_api]</p>
+</blockquote>
+<p>Rustで<a href="https://developer.spotify.com/documentation/web-api">Spotify Web API</a>を利用できる
+ライブラリを作成しました。非同期でリクエストを送ることもできます。</p>
+<h3><a class="header" href="#25-a-hrefproductiontex2pdfhtmltex2pdfa" id="25-a-hrefproductiontex2pdfhtmltex2pdfa">2.5 <a href="./production/tex2pdf.html">TeX2PDF</a></a></h3>
+<blockquote>
+<p>GitHubにTeXファイルをプッシュするとリリースページにデプロイ<br />
+<a href="https://github.com/pyama2000/tex2pdf">pyama2000/tex2pdf</a></p>
+</blockquote>
+<p>TeXファイルをGitHubにプッシュすると、GitHub Actionsによって継続的にリリースページに
+デプロイするリポジトリです。</p>
+<h2><a class="header" href="#3-各種アカウント" id="3-各種アカウント">3. 各種アカウント</a></h2>
+<table><thead><tr><th align="left">サービス</th><th align="left">アカウント名・URL</th></tr></thead><tbody>
+<tr><td align="left">GitHub</td><td align="left"><a href="https://github.com/pyama2000">https://github.com/pyama2000</a></td></tr>
+<tr><td align="left">Qiita</td><td align="left"><a href="https://qiita.com/pyama2000">https://qiita.com/pyama2000</a></td></tr>
+<tr><td align="left">Twitter</td><td align="left"><a href="https://twitter.com/pyama2000">@pyama2000</a></td></tr>
+</tbody></table>
+<h1><a class="header" href="#制作物" id="制作物">制作物</a></h1>
+<ul>
+<li>
+<p><a href="production/./mdbook2pages.html">mdbook2pages</a></p>
+<ul>
+<li>Markdownから<em><strong>book</strong></em>を作成するRust製のツールであるmdBookで作成したものを
+GitHub ActionsによってGitHub Pagesにデプロイするリポジトリです。</li>
+</ul>
+</li>
+<li>
+<p><a href="production/./moses.html">moses</a></p>
+<ul>
+<li>AWS CloudFormationのCI/CDを効率的に行うツールです。</li>
+</ul>
+</li>
+<li>
+<p><a href="production/./musa.html">musa</a></p>
+<ul>
+<li>Spotifyのプレイリストのスナップショット作成や、プレイリスト同士を統合するマージ機能、
+検索機能の強化などを目的としたWebアプリケーションです。</li>
+</ul>
+</li>
+<li>
+<p><a href="production/./spotify_api.html">spotify_api</a></p>
+<ul>
+<li>Rustで<a href="https://developer.spotify.com/documentation/web-api">Spotify Web API</a>を利用できる
+ライブラリを作成しました。非同期でリクエストを送ることもできます。</li>
+</ul>
+</li>
+<li>
+<p><a href="production/./tex2pdf.html">TeX2PDF</a></p>
+<ul>
+<li>TeXファイルをGitHubにプッシュすると、GitHub Actionsによって継続的にリリースページに</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#mdbook2pages" id="mdbook2pages">mdbook2pages</a></h1>
+<blockquote>
+<p><a href="https://github.com/pyama2000/mdbook2pages">pyama2000/mdbook2pages</a></p>
+</blockquote>
+<p>Markdownから<em>book</em>を作成するツールに<a href="https://github.com/rust-lang/mdBook">rust-lang/mdBook</a>を利用しています。
+このツールは<a href="https://www.gitbook.com/">GitBook</a>に似ていますが、<strong>Rust</strong>で書かれたものになっています。
+mdBook向けに書かれたMarkdownファイル群をGitHubにプッシュすることでGitHub ActionsでCI/CDを行い、
+本サイトのようにGitHub Pagesにデプロイします。</p>
+<h2><a class="header" href="#1-プロジェクトの構成図" id="1-プロジェクトの構成図">1. プロジェクトの構成図</a></h2>
+<pre><code>mdbook2pages
+├── book
+├── book.toml
+├── docker-compose.yml
+├── Dockerfile
+├── README.md
+└── src
+   ├── introduction.md
+   ├── production
+   │  ├── mdbook2pages.md
+   │  ├── moses.md
+   │  ├── musa.md
+   │  ├── spotif_api.md
+   │  ├── tex2pdf.md
+   │  └── tof.md
+   └── SUMMARY.md
+</code></pre>
+<h2><a class="header" href="#2-mdbook環境の構築" id="2-mdbook環境の構築">2. mdBook環境の構築</a></h2>
+<p>mdBookはRust製のツールなのでローカルまたはDockerで<strong>Rust + mdBook</strong>を
+実行できる環境を構築する必要があります。ここではDockerを使って環境を構築したいと思います。<br />
+Dockerfileは以下のようにシンプルなものになっています。<br />
+<strong>※ コンパイルが必要なため時間がかかります。</strong></p>
+<h3><a class="header" href="#21-dockerfile" id="21-dockerfile">2.1 Dockerfile</a></h3>
+<pre><code class="language-dockerfile:Dockerfile">FROM rust:latest
+
+RUN cargo install mdbook --vers &quot;^0.3.5&quot;
+
+EXPOSE 3000
+
+WORKDIR /mdbook
+
+CMD [&quot;mdbook&quot;, &quot;serve&quot;, &quot;--hostname&quot;, &quot;0.0.0.0&quot;]
+</code></pre>
+<p><code>cargo install</code>でmdbookをインストールしてますが、<code>--vers &quot;^0.3.5&quot;</code>とすることで
+インストールするバージョンを<strong>0.3.5</strong>から<strong>0.3.x</strong>までに指定しています。
+作業ディレクトリを<code>/mdbook</code>にし、コンテナが起動時に<code>mdbook serve --hostname 0.0.0.0</code>
+を実行します。mdBookはデフォルトで3000番ポートを使用していますが、<code>-p</code>オプションでポート番号を
+変更できます。<code>mdbook serve</code>はファイルが更新されると自動でビルドするコマンドです。</p>
+<h3><a class="header" href="#22-docker-composeyml" id="22-docker-composeyml">2.2 docker-compose.yml</a></h3>
+<pre><code class="language-yaml:docker-compose.yml">version: &quot;3&quot;
+services:
+  mdbook:
+    build: . 
+    volumes:
+      - ./:/mdbook
+    ports:
+      - 3000:3000
+    container_name: mdbook2pages_mdbook
+</code></pre>
+<p><code>docker-compose up --build</code>で2.1節のDockerfileをビルドします。<code>-d</code>オプションでバックグラウンドで
+実行できます。</p>
+<p>これでmdBookを編集、閲覧できる環境が整いました。</p>
+<h2><a class="header" href="#3-mdbookの使い方" id="3-mdbookの使い方">3. mdBookの使い方</a></h2>
+<h3><a class="header" href="#31-プロジェクトの初期化" id="31-プロジェクトの初期化">3.1 プロジェクトの初期化</a></h3>
+<p><code>mdbook init</code>で最小限の構成でmdBookを開始できます。</p>
+<pre><code class="language-shell">$ mdbook init
+
+mdbook2pages
+├── book
+└── src
+   ├── chapter_1.md
+   └── SUMMARY.md
+</code></pre>
+<p><code>book</code>ディレクトリはmdBookでビルドしたファイルが格納されるディレクトリで、デプロイする際に利用します。<br />
+<code>src</code>ディレクトリはMarkdownファイル群になっており、<code>SUMMARY.md</code>はサイドメニューです。</p>
+<pre><code class="language-markdown:SUMMARY.md"># Summary
+
+- [Chapter 1](./chapter_1.md)
+</code></pre>
+<p>この状態で<code>mdbook serve</code>を実行し、ブラウザでlocalhost:3000にアクセスすると以下のように
+左側にサイドメニューが表示されます。<br />
+<strong>※ 画像は上記のMarkdownの実行結果ではありません。</strong></p>
+<p><img src="https://user-images.githubusercontent.com/33086493/72126054-118cfd00-33ae-11ea-8369-b217005d36d0.png" alt="summary image" /></p>
+<h3><a class="header" href="#32-記事の追加" id="32-記事の追加">3.2 記事の追加</a></h3>
+<p><code>src</code>ディレクトリ以下にMarkdownファイルを追加、または<code>SUMMARY.md</code>や他のMarkdownファイルで
+他の記事をリンクするとビルド時に自動的にファイルが生成されます。<br />
+また、<code>src/production</code>のようにディレクトリを作成して、そこにMarkdownファイルを追加することもできます。</p>
+<pre><code class="language-shell">$ cat SUMMARY.md
+# Summary
+
+- [自己紹介](./introduction.md)
+- [制作物](./production/tof.md)
+    - [mdbook2pages](./production/mdbook2pages.md)
+    - [moses](./production/moses.md)
+    - [musa](./production/musa.md)
+    - [spotify_api](./production/spotify_api.md)
+    - [TeX2PDF](./production/tex2pdf.md)
+    - [New file](./production/new_file.md)  # 存在しないファイル
+
+$ mdbook build
+
+mdbook2pages
+├── book
+└── src
+   ├── introduction.md
+   ├── production
+   │  ├── mdbook2pages.md
+   │  ├── moses.md
+   │  ├── musa.md
+   │  ├── new_file.md  # 自動で生成される
+   │  ├── spotif_api.md
+   │  ├── tex2pdf.md
+   │  └── tof.md
+   └── SUMMARY.md
+</code></pre>
+<h2><a class="header" href="#4-github-actionsとの連携" id="4-github-actionsとの連携">4. GitHub Actionsとの連携</a></h2>
+<h1><a class="header" href="#moses" id="moses">moses</a></h1>
+<h1><a class="header" href="#musa" id="musa">musa</a></h1>
+<h1><a class="header" href="#spotify_api" id="spotify_api">spotify_api</a></h1>
+<h1><a class="header" href="#tex2pdf" id="tex2pdf">TeX2PDF</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://0.0.0.0:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
