@@ -1,7 +1,7 @@
 [book]
 title = "pyama2000.github.io"
 authors = ["Takahiko Yamashita"]
-language = "en"
+language = "jp"
 multilingual = false
 src = "src"
 
