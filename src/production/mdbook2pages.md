@@ -45,15 +45,10 @@ RUN cargo install mdbook --vers "^0.3.5"
 EXPOSE 3000
 
 WORKDIR /mdbook
-
-CMD ["mdbook", "serve", "--hostname", "0.0.0.0"]
 ```
 
 `cargo install`でmdbookをインストールしてますが、`--vers "^0.3.5"`とすることで
 インストールするバージョンを**0.3.5**から**0.3.x**までに指定しています。
-作業ディレクトリを`/mdbook`にし、コンテナが起動時に`mdbook serve --hostname 0.0.0.0`
-を実行します。mdBookはデフォルトで3000番ポートを使用していますが、`-p`オプションでポート番号を
-変更できます。`mdbook serve`はファイルが更新されると自動でビルドするコマンドです。
 
 ### 2.2 docker-compose.yml
 
@@ -69,9 +64,7 @@ services:
     container_name: mdbook2pages_mdbook
 ```
 
-`docker-compose up --build`で2.1節のDockerfileをビルドします。`-d`オプションでバックグラウンドで
-実行できます。
-
+`docker-compose up --build`で2.1節のDockerfileをビルドします。
 これでmdBookを編集、閲覧できる環境が整いました。
 
 ## 3. mdBookの使い方
@@ -90,8 +83,8 @@ mdbook2pages
    └── SUMMARY.md
 ```
 
-`book`ディレクトリはmdBookでビルドしたファイルが格納されるディレクトリで、デプロイする際に利用します。  
-`src`ディレクトリはMarkdownファイル群になっており、`SUMMARY.md`はサイドメニューです。
+**book**ディレクトリはmdBookでビルドしたファイルが格納されるディレクトリで、デプロイする際に利用します。  
+**src**ディレクトリはMarkdownファイル群になっており、**SUMMARY.md**はサイドメニューです。
 
 ```markdown:SUMMARY.md
 # Summary
@@ -99,17 +92,24 @@ mdbook2pages
 - [Chapter 1](./chapter_1.md)
 ```
 
-この状態で`mdbook serve`を実行し、ブラウザでlocalhost:3000にアクセスすると以下のように
-左側にサイドメニューが表示されます。  
-**※ 画像は上記のMarkdownの実行結果ではありません。**
+### 3.2 Markdownのビルド、閲覧
+
+`mdbook build`で3.1節で作成されたMarkdownファイル群をビルドできます。ビルドされたファイルは
+**book**ディレクトリに格納されているので、**book/index.html**をブラウザで開くと閲覧ができます。
+
+`mdbook serve --hostname 0.0.0.0`は**src**ディレクトリ以下のファイルを監視し、変更があった場合自動で再ビルドします。
+また、`http://localhost:3000`にアクセスすることで閲覧することができます。
+mdBookはデフォルトで3000番ポートを使用していますが、`-p`オプションでポート番号を
+変更できます。
 
 ![summary image][summary_img]
 
-### 3.2 記事の追加
 
-`src`ディレクトリ以下にMarkdownファイルを追加、または`SUMMARY.md`や他のMarkdownファイルで
+### 3.3 記事の追加
+
+**src**ディレクトリ以下にMarkdownファイルを追加、または**SUMMARY.md**や他のMarkdownファイルで
 他の記事をリンクするとビルド時に自動的にファイルが生成されます。  
-また、`src/production`のようにディレクトリを作成して、そこにMarkdownファイルを追加することもできます。
+また、**src/production**のようにディレクトリを作成して、そこにMarkdownファイルを追加することもできます。
 
 ```shell
 $ cat SUMMARY.md
