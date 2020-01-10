@@ -1,0 +1,9 @@
+[book]
+title = "pyama2000.github.io"
+authors = ["Takahiko Yamashita"]
+language = "jp"
+multilingual = false
+src = "src"
+
+[output.html]
+additional-css = ["theme/custom.css"]
