@@ -11,21 +11,30 @@ mdBook向けに書かれたMarkdownファイル群をGitHubにプッシュする
 
 ```
 mdbook2pages
+├── .github
+│  ├── actions
+│  │  └── build
+│  │     └── Dockerfile
+│  └── workflows
+│     └── main.yml
 ├── book
 ├── book.toml
 ├── docker-compose.yml
 ├── Dockerfile
 ├── README.md
-└── src
-   ├── introduction.md
-   ├── production
-   │  ├── mdbook2pages.md
-   │  ├── moses.md
-   │  ├── musa.md
-   │  ├── spotif_api.md
-   │  ├── tex2pdf.md
-   │  └── tof.md
-   └── SUMMARY.md
+├── src
+│  ├── introduction.md
+│  ├── production
+│  │  ├── mdbook2pages.md
+│  │  ├── moses.md
+│  │  ├── musa.md
+│  │  ├── spotify_api.md
+│  │  ├── tex2pdf.md
+│  │  └── tof.md
+│  └── SUMMARY.md
+└── theme
+   ├── custom.css
+   └── highlight.css
 ```
 
 ## 2. mdBook環境の構築
